@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Assignment 2</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-lumen.min.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/footer.css">
+		<link rel="stylesheet" type="text/css" href="css/awesome-bootstrap-checkbox.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="js/jq.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	</head>
+	<body ng-app="mainApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">IEEE SP WebDev</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container" ng-controller="heroesController">
+			<div class="row">
+				<div class="container">
+					<div class="page-header">
+						<h1>
+						Sample MEAN Stack Application, Heroes!
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="container">
+
+					<div class="col-md-6">
+						<ul>
+							<li ng-repeat="hero in heroes" ng-click="getHero(hero.name)">{{hero.name}}</li>
+						</ul>
+						Hero Name :
+						<input type="text" ng-model="newHeroName">
+						Power :
+						<input type="text" ng-model = "newSuperPower">
+						<button ng-click="newHero()">Add a hero!</button>
+					</div>
+					<div class="col-md-6" ng-if="selectedHero.selected">
+						<h2>Hero details</h2>
+						<p>Name :
+							<input type="text" class="input-group" ng-model="selectedHero.name"></p>
+						<p>Power :
+							<input type="text" class="input-group" ng-model="selectedHero.power"></p>
+						<button class="btn-primary btn" ng-click="editHero()">Save</button>
+					</div>
+				</div>
+			</div>
+		<footer class="footer">
+			<div class="container">
+				<p class="text-muted">Made with <span class="glyphicon glyphicon-heart"></span> by Vighnesh Velayudhan</p>
+			</div>
+		</footer>
+	</body>
+</html>
