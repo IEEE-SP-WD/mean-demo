@@ -38,6 +38,8 @@ function heroesController($scope, $http){
 				power : $scope.newSuperPower
             }
 		}).then(function (response) {
+            $scope.newHeroName = '';
+            $scope.newSuperPower = '';
             $scope.getHeroes();
         });
 	};
